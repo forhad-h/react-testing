@@ -1,9 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './component/header'
+import './App.scss';
 
 function App() {
-  return <h1>Test</h1>
+  return <div className="App">
+    <Header />
+  </div>
 }
 
 export default App;
