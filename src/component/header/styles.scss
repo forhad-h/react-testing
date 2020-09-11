@@ -1,16 +1,14 @@
 @import "../../variables";
+@import "../../mixins";
 
 header {
   background-color: $dark_blue;
   padding: 15px 20px;
 
   .wrap {
-    width: 100%;
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
+    @include block_layout;
 
-    .logo {
+    .logoWrap {
       width: 120px;
     }
   }
