@@ -11,12 +11,12 @@ describe('Header Component', () => {
     wrapper = shallow(<Header />)
   })
 
-  it('should render without errors', () => {
+  it('should render Header', () => {
     const headerComponent = findByTestAttr(wrapper, 'headerComponent')
     expect(headerComponent.length).toBe(1)
   })
 
-  it('should logo without errors', () => {
+  it('should render Logo', () => {
     const logoImg = findByTestAttr(wrapper, 'logoImg')
     expect(logoImg.length).toBe(1)
   })
