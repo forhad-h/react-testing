@@ -32,7 +32,7 @@ function App(props) {
 
 
 
-  return <div className="App">
+  return <div className="App" data-test="appComponent">
     <Header />
     <main>
 
@@ -41,7 +41,7 @@ function App(props) {
         <SharedButton {...buttonProps} />
       </section>
 
-      <section className="post_list">
+      <section className="post_list" data-test="postList">
         {(props.posts && props.posts.length > 0) && props.posts.map((item, index) => {
           const ListItemProps = {
             title: item.title,
