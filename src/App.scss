@@ -1,0 +1,11 @@
+@import './mixins';
+
+main {
+  @include block_layout;
+  color: #eee;
+}
+
+.post_list {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}

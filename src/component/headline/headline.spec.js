@@ -39,8 +39,8 @@ describe("Headline Component", () => {
     const wrapper = shallow(<Headline />)
 
     it('should return null', () => {
-      const mainComponent = findByTestAttr(wrapper, 'main')
-      expect(mainComponent.length).toBe(0)
+      const headlineComponent = findByTestAttr(wrapper, 'headline')
+      expect(headlineComponent.length).toBe(0)
     })
 
   })
@@ -51,11 +51,11 @@ describe("Headline Component", () => {
       wrapper.setProps({ title: "Test title", desc: "Test description" })
     })
 
-    it("should render main component", () => {
+    it("should render headline component", () => {
 
-      const mainComponent = findByTestAttr(wrapper, 'main')
+      const headlineComponent = findByTestAttr(wrapper, 'headline')
 
-      expect(mainComponent.length).toBe(1)
+      expect(headlineComponent.length).toBe(1)
 
     })
 

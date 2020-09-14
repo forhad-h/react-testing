@@ -12,10 +12,10 @@ class Headline extends Component {
 
     if (!title) return null;
 
-    return <main data-test="main">
+    return <div data-test="headline">
       <h2 data-test="title">{title}</h2>
       <p data-test="desc">{desc}</p>
-    </main>
+    </div>
   }
 }
 

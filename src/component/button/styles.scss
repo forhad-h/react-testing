@@ -1,0 +1,14 @@
+.shared_button {
+  background: #ff7600;
+  border: 0 none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.shared_button:hover {
+  background: #db6702
+}

@@ -6,22 +6,22 @@ describe("Post Reducer", () => {
   it('should return initial state in no-type', () => {
     const newState = postReducer(undefined, {})
 
-    expect(newState).toEqual([])
+    expect(newState).toEqual(null)
 
   })
 
   it('should return new state if receiving type', () => {
     const posts = [
-      { title: "Title 1" },
-      { title: "Title 2" },
-      { title: "Title 3" }
+      { 'title': 'Test title one' },
+      { 'title': 'Test title two' }
     ]
     const newState = postReducer(undefined, {
       type: types.GET_POSTS,
-      payload: posts
+      posts: posts
     })
 
-    expect(newState).toEqual(posts)
+
+    expect(newState).toMatchObject(posts)
 
   })
 
