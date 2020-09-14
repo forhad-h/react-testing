@@ -60,8 +60,8 @@ const mapStateToProps = state => ({
   posts: state.posts
 })
 
-const mapDispatchToProps = dispatch => ({
-  getPosts: () => dispatch(getPosts())
-})
+const mapDispatchToProps = {
+  getPosts
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
