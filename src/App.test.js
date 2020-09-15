@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
 import { findByTestAttr, testStore } from '../Utils'
 import App from './App'
@@ -26,8 +26,7 @@ describe('App Component', () => {
 
     const store = testStore(initialState)
 
-    wrapper = shallow(<App store={store} />).childAt(0).dive()
-
+    wrapper = mount(<App store={store} />).childAt(0)
     appInstance = wrapper.instance()
 
   })
