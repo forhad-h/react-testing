@@ -7,7 +7,7 @@ import ListItem from './component/listItem'
 
 describe('App Component', () => {
 
-  let wrapper
+  let wrapper, appInstance
 
   beforeEach(() => {
 
@@ -27,6 +27,8 @@ describe('App Component', () => {
     const store = testStore(initialState)
 
     wrapper = shallow(<App store={store} />).childAt(0).dive()
+
+    appInstance = wrapper.instance()
 
   })
 
@@ -49,6 +51,24 @@ describe('App Component', () => {
   it('should render three list items of post', () => {
 
     expect(wrapper.find(ListItem)).toHaveLength(3)
+
+  })
+
+  it('updateState method should update state with', () => {
+
+    appInstance.updateState()
+
+    const newState = appInstance.state.hideButton
+
+    expect(newState).toBe(true)
+
+  })
+
+  it('simplyReturn should return value as expected', () => {
+
+    const newValue = appInstance.simplyReturn(1)
+
+    expect(newValue).toEqual(2)
 
   })
 

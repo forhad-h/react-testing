@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import './App.scss';
@@ -17,43 +17,68 @@ const tempArr = [{
   onlineStatus: true
 }]
 
-function App(props) {
+class App extends Component {
 
-
-  const headerProps = {
-    title: "Posts",
-    desc: "Click to the button to see published posts."
+  state = {
+    hideButton: false
   }
 
-  const buttonProps = {
-    buttonText: "Get Posts",
-    emitEvent: props.getPosts
+  getPosts = () => {
+    this.props.getPosts()
+    this.updateState()
+  }
+
+  updateState() {
+    this.setState({
+      hideButton: true
+    })
+  }
+
+  simplyReturn(num) {
+    return num + 1
   }
 
 
 
-  return <div className="App" data-test="appComponent">
-    <Header />
-    <main>
+  render() {
 
-      <section>
-        <Headline {...headerProps} tempArr={tempArr} />
-        <SharedButton {...buttonProps} />
-      </section>
+    const headerProps = {
+      title: "Posts",
+      desc: "Click to the button to see published posts."
+    }
 
-      <section className="post_list" data-test="postList">
-        {(props.posts && props.posts.length > 0) && props.posts.map((item, index) => {
-          const ListItemProps = {
-            title: item.title,
-            desc: item.body
-          }
-          return <ListItem key={index} {...ListItemProps} />
+    const buttonProps = {
+      buttonText: "Get Posts",
+      emitEvent: this.getPosts
+    }
 
-        })}
-      </section>
 
-    </main>
-  </div>
+
+    return <div className="App" data-test="appComponent" >
+      <Header />
+      <main>
+
+        <section>
+          <Headline {...headerProps} tempArr={tempArr} />
+          {!this.state.hideButton &&
+            <SharedButton {...buttonProps} />}
+        </section>
+
+        <section className="post_list" data-test="postList">
+          {(this.props.posts && this.props.posts.length > 0) && this.props.posts.map((item, index) => {
+            const ListItemProps = {
+              title: item.title,
+              desc: item.body
+            }
+            return <ListItem key={index} {...ListItemProps} />
+
+          })}
+        </section>
+
+      </main>
+    </div >
+  }
+
 }
 
 const mapStateToProps = state => ({
