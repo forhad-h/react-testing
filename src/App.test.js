@@ -68,7 +68,7 @@ describe('App Component', () => {
 
     const newValue = appInstance.simplyReturn(1)
 
-    expect(newValue).toEqual(1)
+    expect(newValue).toEqual(2)
 
   })
 
