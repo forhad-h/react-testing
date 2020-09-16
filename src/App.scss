@@ -1,5 +1,10 @@
 @import './mixins';
 
+.page_title {
+  color: #eee;
+  text-align: center;
+}
+
 main {
   @include block_layout;
   color: #eee;
