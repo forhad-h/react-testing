@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 
 import './App.scss';
@@ -29,4 +30,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);
